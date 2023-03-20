@@ -1,7 +1,6 @@
 import java.util.TimerTask;
 
 public class Timer {
-    //    public static int delayValue = 5000;
     // call menuChoice from Main.java
     public static boolean menuChoice = Main.menuChoice;
     static int timeLog = 0;

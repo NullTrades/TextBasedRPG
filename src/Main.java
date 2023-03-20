@@ -16,7 +16,7 @@ Groups - identify who is working on what!
 */
 
 import java.util.Scanner;
-//This is a test message to test GitHub Commits
+
 public class Main {
     public static boolean menuChoice;
     private static Scanner scanner = new Scanner(System.in);
@@ -28,7 +28,9 @@ public class Main {
         //This will determine what type of result you'll get at the end of the game
         sanityBar = 100;
 
-        //Prints out title
+        //Chelsea: Prints out title
+        //Used the dashes in order for the reader to understand and follow along with the game *clarity*
+        //Thought about using "\n" but it was easier for us to organize our thoughts by showing the line of dashes
         System.out.println("---------------");
         System.out.println("Countdown Chaos: Exam in 30 Minutes");
         System.out.println("---------------");
@@ -187,6 +189,9 @@ public class Main {
 
             System.out.println("Will you give it to her, or will you resist?");
 
+            // Used boolean to save time and effort by eliminating inappropriate hits that must be scanned before discarding
+            //They connect our search words together to either narrow or broaden the set of results.
+            //Same code as the one above
             boolean karenChoice1 = true;
             while (karenChoice1 = true) {
                 System.out.print("Selection (Give[1], Resist[2]): ");
@@ -327,7 +332,8 @@ public class Main {
         }
     }
 
-    //This method is in charge of what education you'll get depending on sanity
+    // OSY'S CODE
+    // This method is in charge of what education you'll get depending on sanity
     private static void finalResult() {
         endSequence = true;
         System.out.println("---------------");
