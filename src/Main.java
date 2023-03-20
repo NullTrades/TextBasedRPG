@@ -171,7 +171,10 @@ public class Main {
         return drinkOption;
     }
 
-    //This code is in charge of the wild karen encounter
+    //We all worked on this method, but on different parts of it as it was bigger than the other ones
+    //CHELSEA'S CODE
+    // This code is in charge of the wild karen encounter
+    // Passed drinks and shirt through the methods since that is what determines the sanity *depending on what happens when meeting Karen*
     private static void wildKaren(int drinks, int shirt) {
         System.out.println("---------------");
         System.out.println("It's currently 11:45 am. You're in a rush to get to the final exam. But, on your way there you encounter a WILD KAREN!");
@@ -343,7 +346,7 @@ public class Main {
         //Your final sanity will determine what university (if any) you'll go to!
         if (sanityBar >= 100) {
             System.out.println("You ascended to Heaven's University Honors Program!");
-        } else if(sanityBar >= 81 && sanityBar < 100) {
+        } else if (sanityBar >= 81 && sanityBar < 100) {
             System.out.println("CONGRATULATIONS! You got into Harvard University!");
         } else if (sanityBar <= 80 && sanityBar >= 61) {
             System.out.println("You Applied for University of Toronto Engineering program and you got accepted!");
