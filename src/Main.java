@@ -16,7 +16,7 @@ Groups - identify who is working on what!
 */
 
 import java.util.Scanner;
-
+//This is a test message to test GitHub Commits
 public class Main {
     public static boolean menuChoice;
     private static Scanner scanner = new Scanner(System.in);
