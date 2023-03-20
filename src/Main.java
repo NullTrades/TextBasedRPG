@@ -43,7 +43,6 @@ public class Main {
 
         //Calls getDrinks method
         int drinks = getDrinks();
-
         //This is tested code to make sure that whatever drink you choose is returned
         //System.out.println("Drink: " + drinks);
 
@@ -57,7 +56,9 @@ public class Main {
         scanner.close();
     }
 
-    //This section of code is for our menu *explains what the game is about or player can choose to play right awa*
+    //DANIEL'S CODE
+    //This section of code is for our menu
+    //Explains what the game is about or player can choose to play right away
     private static void menuSelection() {
         boolean menuChoice = false;
         while (!menuChoice) {
@@ -76,7 +77,14 @@ public class Main {
         }
     }
 
+    //DANIEL'S + CHELSEA'S CODE
     //This method is in charge of selecting your shirt for the game
+    //It starts off by displaying some context
+    //The 2 options are placed within a while loop so that user input error is negated
+    //The shirts are assigned a number and then returned
+    //This allows for the shirts to be used in other methods, as the code won't know what the user chose without its return
+    //Each shirt is also assigned a sanity level, which affects the overall sanity of the user
+    //This is also printed out so the user knows their current sanity
     private static int getShirt() {
         System.out.println("---------------");
         System.out.println("It's currently 11:30 am. The final exam starts at 12 sharp and you're still in pyjamas!");
@@ -112,7 +120,9 @@ public class Main {
         return shirtColour;
     }
 
+    //DANIEL'S CODE
     //This code is in charge of selecting what drink you want before the exam
+    //The code is pretty much the same as the getShirt method
     private static int getDrinks() {
         System.out.println("---------------");
         System.out.println("It's currently 11:40 am. You decided to buy a drink from SquareBucks to energize!");
