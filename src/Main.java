@@ -39,12 +39,16 @@ public class Main {
 
         //Calls getShirt method
         int shirt = getShirt();
-        //This is tested code to make sure that whatever shirt you choose is returned
+
+        //Debugging code:
+        //This is tested code to make sure that whatever shirt you choose is returned, so it could be used in other methods
         //System.out.println("Shirt: " + shirt);
 
         //Calls getDrinks method
         int drinks = getDrinks();
-        //This is tested code to make sure that whatever drink you choose is returned
+
+        //Debugging code:
+        //This is tested code to make sure that whatever drink you choose is returned, so it could be used in other methods
         //System.out.println("Drink: " + drinks);
 
         //Calls wildKaren method
@@ -58,17 +62,29 @@ public class Main {
     }
 
     //DANIEL'S CODE
-    //This section of code is for our menu
-    //Explains what the game is about or player can choose to play right away
+
+    //Using private static void as nothing (such as an int value) is being returned, unlike in the next method where we return an int value
+    //This method is in charge of simply introducing the context of the game to the player and starting the game
+    //The two options are "PLAY" and "ABOUT" and have .toUpperCase to read any type of user input the player might use.
+    //This means a player may input "abOuT" or "about" and the output would be the same - coding defensively
+    //The ABOUT section is put into a sort-of "infinite" loop, where once you get the context needed, it goes back to the selection options "PLAY" and "ABOUT"
+    //The layout of putting the Menu selections for the player to choose either "PLAY, ABOUT" makes it easier for them to follow along and not miss any information. The structure itself and when it prints out is efficient and easy to understand.
+    //Pre-conditions: The text has to match the words displayed on the selection menu because of .toUpperCase
+    //Post-condition: No matter what you type in, a long as you spell it correctly *not taking in consideration of Upper/lower case*, it will be understood
+    //For example, "aBoUt" would be read as "ABOUT" and would work due to .toUpperCase. But, it would not accept anything but the actual words that make up "about"
+    //We put it in a while loop and boolean true/false to prevent from user error
+    //Using private static void as nothing (as in an int variable) is being returned
+    //There are 2 options that could be chosen - PLAY or ABOUT
+    //PLAY simply runs the next method
     private static void menuSelection() {
         boolean menuChoice = false;
         while (!menuChoice) {
-            System.out.print("Enter your selection (Play[1], About[2]): ");
-            String menuChosen = scanner.nextLine();
-            if (menuChosen.equals("1")) {
+            System.out.print("Enter your selection (PLAY, ABOUT): ");
+            String menuChosen = scanner.nextLine().toUpperCase();
+            if (menuChosen.equals("PLAY")) {
                 menuChoice = true;
                 Timer.main(null);
-            } else if (menuChosen.equals("2")) {
+            } else if (menuChosen.equals("ABOUT")) {
                 System.out.println("---------------");
                 System.out.println("Context: You woke up 30 minutes before your final exam starts to get into post-secondary school!");
                 System.out.println("Objective: Get to the final exam on time, and pass the exam! Make sure to not lose your sanity along the way there...");
@@ -103,9 +119,9 @@ public class Main {
         int shirtColour = 0;
         //since we used while(true) we added in the breaks after each option to stop the loop
         while (true) {
-            System.out.print("Selection (Black[1], White[2]): ");
-            String shirtChosen = scanner.nextLine();
-            if (shirtChosen.equals("1")) {
+            System.out.print("Selection (BLACK, WHITE): ");
+            String shirtChosen = scanner.nextLine().toUpperCase();
+            if (shirtChosen.equals("BLACK")) {
                 shirtColour = 1;
                 sanityBar = sanityBar - 10;
                 // Lose 10 sanity from the sanity bar
@@ -113,7 +129,7 @@ public class Main {
                 System.out.println("You chose to wear the back shirt!");
                 System.out.println("Current Sanity: " + sanityBar);
                 break;
-            } else if (shirtChosen.equals("2")) {
+            } else if (shirtChosen.equals("WHITE")) {
                 shirtColour = 2;
                 sanityBar = sanityBar + 10;
                 // Gain 10 sanity from the sanity bar
@@ -142,9 +158,9 @@ public class Main {
         int drinkOption = 0;
 
         while (true) {
-            System.out.print("Selection (Coffee[1], Iced Tea[2], Water [3]): ");
-            String drinkChosen = scanner.nextLine();
-            if (drinkChosen.equals("1")) {
+            System.out.print("Selection (COFFEE, TEA, WATER): ");
+            String drinkChosen = scanner.nextLine().toUpperCase();
+            if (drinkChosen.equals("COFFEE")) {
                 drinkOption = 1;
                 sanityBar = sanityBar + 10;
                 System.out.println("---------------");
@@ -153,16 +169,16 @@ public class Main {
                 System.out.println("Because you chose the coffee, you got an additional 10 Sanity!");
                 System.out.println("Current Sanity: " + sanityBar);
                 break;
-            } else if (drinkChosen.equals("2")) {
+            } else if (drinkChosen.equals("TEA")) {
                 drinkOption = 2;
                 sanityBar = sanityBar - 5;
                 System.out.println("---------------");
-                System.out.println("You chose the iced tea!");
+                System.out.println("You chose the tea!");
                 System.out.println("---------------");
                 System.out.println("Because you chose the iced tea, you gian no additional Sanity!");
                 System.out.println("Current Sanity: " + sanityBar);
                 break;
-            } else if (drinkChosen.equals("3")) {
+            } else if (drinkChosen.equals("WATER")) {
                 drinkOption = 3;
                 sanityBar = sanityBar - 15;
                 System.out.println("---------------");
@@ -177,6 +193,7 @@ public class Main {
     }
 
     //We all worked on this method, but on different parts of it as it was bigger than the other ones
+
     //CHELSEA'S CODE
 
     //sample
@@ -196,7 +213,7 @@ public class Main {
         //This is the random number generator, which will be used to determine certain events by chance
         //Made it so that there's a higher chance of getting the Karen to spill the coffee all over the player
         //Following code will be used if selected drink is coffee
-        int currentSanity = 0;
+
         if (drinks == 1) {
             System.out.println("Having chosen the coffee, the Wild Karen wants to ruin your day!");
             System.out.println("Wild Karen: I WANT THAT COFFEE!!!");
@@ -209,9 +226,9 @@ public class Main {
             //Same code as the one above
             boolean karenChoice1 = true;
             while (karenChoice1 = true) {
-                System.out.print("Selection (Give[1], Resist[2]): ");
-                String karenChosen1 = scanner.nextLine();
-                if (karenChosen1.equals("1")) {
+                System.out.print("Selection (GIVE, RESIST): ");
+                String karenChosen1 = scanner.nextLine().toUpperCase();
+                if (karenChosen1.equals("GIVE")) {
                     sanityBar = sanityBar - 25;
                     System.out.println("---------------");
                     System.out.println("You generously give your coffee away!");
@@ -219,7 +236,7 @@ public class Main {
                     System.out.println("But now you don't have any caffeine to energize you! So, you lost 20 sanity!");
                     System.out.println("Current Sanity: " + sanityBar);
 
-                } else if (karenChosen1.equals("2")) {
+                } else if (karenChosen1.equals("RESIST")) {
                     System.out.println("You decide to stand up for yourself and defy the crazy Karen!");
 
                     int dice = (int) (Math.random() * 12 + 1);
@@ -289,9 +306,9 @@ public class Main {
 
             boolean karenChoice2 = true;
             while (karenChoice2 = true) {
-                System.out.print("Selection (Give[1], Resist[2]: ");
-                String karenChosen2 = scanner.nextLine();
-                if (karenChosen2.equals("1")) {
+                System.out.print("Selection (GIVE, RESIST: ");
+                String karenChosen2 = scanner.nextLine().toUpperCase();
+                if (karenChosen2.equals("GIVE")) {
                     sanityBar = sanityBar - 20;
                     System.out.println("---------------");
                     System.out.println("You generously give your iced tea away!");
@@ -299,7 +316,7 @@ public class Main {
                     System.out.println("But now you don't have a refreshing drink to sustain you! So, you lose 20 sanity :(");
                     System.out.println("Current Sanity: " + sanityBar);
 
-                } else if (karenChosen2.equals("2")) {
+                } else if (karenChosen2.equals("RESIST")) {
                     System.out.println("You decide to stand up for yourself and defy the crazy Karen!");
 
                     if (dice >= 1 && dice <= 6) {
