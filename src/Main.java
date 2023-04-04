@@ -21,6 +21,7 @@ public class Main {
     public static boolean menuChoice;
     private static Scanner scanner = new Scanner(System.in);
     private static int sanityBar;
+    // sample comment two
     static boolean endSequence = false;
 
     public static void main(String[] args) {
@@ -358,4 +359,5 @@ public class Main {
             System.out.println("You went mentally insane and got locked up in an asylum. This is the worst ending...");
         }
     }
+
 }
