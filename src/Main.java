@@ -18,10 +18,8 @@ Groups - identify who is working on what!
 import java.util.Scanner;
 
 public class Main {
-    public static boolean menuChoice;
     private static Scanner scanner = new Scanner(System.in);
     private static int sanityBar;
-    //sample comment two
     static boolean endSequence = false;
 
     public static void main(String[] args) {
