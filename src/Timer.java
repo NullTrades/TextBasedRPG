@@ -1,20 +1,20 @@
 import java.util.TimerTask;
 
 public class Timer {
-    // call menuChoice from Main.java
-    public static boolean menuChoice = Main.menuChoice;
+    // Osy - call menuChoice from Main.java
     static int timeLog = 0;
-    // change it to if menuChoice = true
-    //      debug if it does not run because if is called initially(when menuChoice is false)
-    //      while loop might not work in this case because it might call the print statements infinitely
+
+    // Osy - change it to if menuChoice = true
+    // Osy - debug if it does not run because if is called initially(when menuChoice is false)
+    // Osy - while loop might not work in this case because it might call the print statements infinitely
     public static void main(String[] args) {
-        //while menuChoice from Main.java is equal to 1
-        //write an if statement with the condition of menuChoice variable from the main method being true
-// the messageDelay function must be called with two parameters
-        // the first parameter is the message{string} that will be printed
-        // the second parameter is the time in milliseconds
-        // the time in milliseconds is the time that will pass before the message is printed
-        // since eacth messageDelay function is called initially the star system function is called aswell
+        // Osy - while menuChoice from Main.java is equal to 1
+        // Osy - write an if statement with the condition of menuChoice variable from the main method being true
+        // Osy - the messageDelay function must be called with two parameters
+        // Osy - the first parameter is the message{string} that will be printed
+        // Osy - the second parameter is the time in milliseconds
+        // Osy - the time in milliseconds is the time that will pass before the message is printed
+        // Osy - since eacth messageDelay function is called initially the star system function is called aswell
         timeLog = 30;
         messageDelay("1 minute has passed", 60 * 1000);//time from 30 seconds to 1 minute
         timeLog = 60;
@@ -33,25 +33,25 @@ public class Timer {
         timer.schedule(new TimerTask() {
             public void run() {
                 System.out.println();
+                // Osy - since there could be input requested before this print bring the user cursor to the next line
                 System.out.println(messageShown);
-                //since there could be input requested before this print bring the user cursor to the next line
                 System.out.println();
             }
         }, delayValue);
     }
 
-    // star system function
-    // this function is called endSequence variable from the main method is true
-    // the endSequence variable is set to true when the user has completed the game
-    // the timeLog variable is set to the time that the user has taken to complete the game
+    // Osy - star system function
+    // Osy - this function is called endSequence variable from the main method is true
+    // Osy - the endSequence variable is set to true when the user has completed the game
+    // Osy - the timeLog variable is set to the time that the user has taken to complete the game
     //
-    // the star system is as follows
-    // 5 stars if the user has completed the game in 30 seconds or less
-    // 4 stars if the user has completed the game in 31 seconds or more and 60 seconds or less
-    // 3 stars if the user has completed the game in 61 seconds or more and 120 seconds or less
-    // 2 stars if the user has completed the game in 121 seconds or more and 300 seconds or less
-    // 1 star if the user has completed the game in 301 seconds or more and 600 seconds or less
-    // 0 stars if the user has completed the game in 601 seconds or more
+    // Osy - the star system is as follows
+    // Osy - 5 stars if the user has completed the game in 30 seconds or less
+    // Osy - 4 stars if the user has completed the game in 31 seconds or more and 60 seconds or less
+    // Osy - 3 stars if the user has completed the game in 61 seconds or more and 120 seconds or less
+    // Osy - 2 stars if the user has completed the game in 121 seconds or more and 300 seconds or less
+    // Osy - 1 star if the user has completed the game in 301 seconds or more and 600 seconds or less
+    // Osy - 0 stars if the user has completed the game in 601 seconds or more
     private static void starSystem() {
         if (Main.endSequence == true) {
             if (timeLog >= 0 && timeLog <= 30) {

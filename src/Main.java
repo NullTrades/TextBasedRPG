@@ -18,10 +18,8 @@ Groups - identify who is working on what!
 import java.util.Scanner;
 
 public class Main {
-    public static boolean menuChoice;
     private static Scanner scanner = new Scanner(System.in);
     private static int sanityBar;
-    //sample comment two
     static boolean endSequence = false;
 
     public static void main(String[] args) {
@@ -81,13 +79,19 @@ public class Main {
     }
 
     //DANIEL'S + CHELSEA'S CODE
-    //This method is in charge of selecting your shirt for the game
-    //It starts off by displaying some context
-    //The 2 options are placed within a while loop so that user input error is negated
-    //The shirts are assigned a number and then returned
+
+    //Using private static int returning the shirts that are assigned a number and then returned
     //This allows for the shirts to be used in other methods, as the code won't know what the user chose without its return
     //Each shirt is also assigned a sanity level, which affects the overall sanity of the user
     //This is also printed out so the user knows their current sanity
+    //It starts off by displaying some context and the 2 options are placed within a while loop so that user input error is negated
+    //Pre-conditions: The text has to match the words displayed on the selection menu because of .toUpperCase
+    //Post-condition: No matter what you type in, a long as you spell it correctly *not taking in consideration of Upper/lower case*, it will be understood
+    //For example, "aBoUt" would be read as "ABOUT" and would work due to .toUpperCase. But, it would not accept anything but the actual words that make up "about"
+    //Though there aren't any "advanced" structures such as exception handling, we put every instance of user input in a while loop
+
+
+    //This method is in charge of selecting your shirt for the game
     private static int getShirt() {
         System.out.println("---------------");
         System.out.println("It's currently 11:30 am. The final exam starts at 12 sharp and you're still in pyjamas!");
@@ -174,8 +178,15 @@ public class Main {
 
     //We all worked on this method, but on different parts of it as it was bigger than the other ones
     //CHELSEA'S CODE
-    // This code is in charge of the wild karen encounter
+
+    //sample
+
+
+    // This code is in charge of the wild karen encounter using a private static void    
     // Passed drinks and shirt through the methods since that is what determines the sanity *depending on what happens when meeting Karen*
+    //A flag or code used for debugging should be included in the comment, along with an explanation of what was being do
+    //Preconditions and post-conditions should be identified, including any assumptions made when calling the method.
+    //Advanced algorithmic structures, such as try/catch blocks, should be explained and unpacked.
     private static void wildKaren(int drinks, int shirt) {
         System.out.println("---------------");
         System.out.println("It's currently 11:45 am. You're in a rush to get to the final exam. But, on your way there you encounter a WILD KAREN!");
@@ -192,7 +203,7 @@ public class Main {
             System.out.println("---------------");
 
             System.out.println("Will you give it to her, or will you resist?");
-
+//The comment should include information about what the method does, how it makes the code shorter or more efficient, the purpose and function of its parameters, and the purpose and function of its return value.
             // Used boolean to save time and effort by eliminating inappropriate hits that must be scanned before discarding
             //They connect our search words together to either narrow or broaden the set of results.
             //Same code as the one above
