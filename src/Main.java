@@ -21,6 +21,7 @@ public class Main {
     public static boolean menuChoice;
     private static Scanner scanner = new Scanner(System.in);
     private static int sanityBar;
+    //Sample comment
     static boolean endSequence = false;
 
     public static void main(String[] args) {
