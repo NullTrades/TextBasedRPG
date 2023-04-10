@@ -197,20 +197,21 @@ public class Main {
 
     //CHELSEA'S CODE
 
-    //sample
+    //This code is in charge of the wild karen encounter using a private static void
+    //Passed drinks and shirt through the methods since that is what determines the sanity *depending on what happens when meeting Karen*
+    //A piece of code used for debugging was to check how much sanity the player has once an encounter took place
+    //For example, "sanityBar = sanityBar - 25;" and then "System.out.println("Sanity: " + sanityBar);"
+    //Preconditions: You will have to type out "Give" or "Resist" in order for the code to give you a situation and how you will deal with Karen
+    //Post-conditions: If you choose to resist, the dice roll will choose how much sanity is lost by making the Karen spill, steal, doesn't see the coffee
+    //If you choose to give Karen the coffee, you lose 20 sanity as you don't have caffeine to energize
 
-
-    // This code is in charge of the wild karen encounter using a private static void    
-    // Passed drinks and shirt through the methods since that is what determines the sanity *depending on what happens when meeting Karen*
-    //A flag or code used for debugging should be included in the comment, along with an explanation of what was being do
-    //Preconditions and post-conditions should be identified, including any assumptions made when calling the method.
-    //Advanced algorithmic structures, such as try/catch blocks, should be explained and unpacked.
     private static void wildKaren(int drinks, int shirt) {
         System.out.println("---------------");
         System.out.println("It's currently 11:45 am. You're in a rush to get to the final exam. But, on your way there you encounter a WILD KAREN!");
         System.out.println("Wild Karen: Hey, YOU! What drink do you have in your hand?!");
         System.out.println("---------------");
 
+//Advanced algorithmic structures, such as try/catch blocks, should be explained and unpacked.
         //This is the random number generator, which will be used to determine certain events by chance
         //Made it so that there's a higher chance of getting the Karen to spill the coffee all over the player
         //Following code will be used if selected drink is coffee
